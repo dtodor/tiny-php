@@ -57,11 +57,14 @@ function makeHeader() {
 
   <div id="container">
     <header>
-			<ul>
-				<?php foreach ($mainNavigationItems as $navItemTitle => $navItemData) : ?>
-				<li class="<?php echo $navItemData['class']; ?>"><a href="<?php echo $navItemData['url']; ?>" title="<?php echo $navItemTitle; ?>"><?php echo $navItemTitle; ?></a></li>
-				<?php endforeach; ?>
-			</ul>
+			<h1><?php echo $title; ?></h1>
+			<nav>
+				<ul class="clearfix">
+					<?php foreach ($mainNavigationItems as $navItemTitle => $navItemData) : ?>
+					<li class="<?php echo $navItemData['class']; ?>"><a href="<?php echo $navItemData['url']; ?>" title="<?php echo $navItemTitle; ?>"><?php echo $navItemTitle; ?></a></li>
+					<?php endforeach; ?>
+				</ul>
+			</nav>
     </header>
     
 <?php

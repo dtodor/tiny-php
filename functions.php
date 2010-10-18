@@ -1,5 +1,6 @@
 <?php
 
+// Stylesheets & scripts
 $enqueuedStylesheets = array();
 
 function enqueueStylesheet($stylesheet) {
@@ -14,6 +15,7 @@ function enqueueScript($script, $isFooterScript = false) {
 	$enqueuedScripts[$isFooterScript][] = $script;
 }
 
+// Main navigation
 $mainNavigationItems = array();
 
 function addMainNavigationItem($itemUrl, $itemTitle, $itemClass = null) {
@@ -30,6 +32,24 @@ function setMainNavigationItemClass($itemTitle, $itemClass) {
 	}
 }
 
+// Side navigation
+$sideNavigationItems = array();
+
+function addSideNavigationItem($itemUrl, $itemTitle, $itemClass = null) {
+	global $sideNavigationItems;
+	$sideNavigationItems[$itemTitle] = array();
+	$sideNavigationItems[$itemTitle]["url"] = $itemUrl;
+	$sideNavigationItems[$itemTitle]["class"] = $itemClass;
+}
+
+function setSideNavigationItemClass($itemTitle, $itemClass) {
+	global $sideNavigationItems;
+	if (isset($sideNavigationItems[$itemTitle])) {
+		$sideNavigationItems[$itemTitle]["class"] = $itemClass;
+	}
+}
+
+// Page title
 $title = "";
 
 function setTitle($pageTitle) {

@@ -17,11 +17,22 @@ setMainNavigationItemClass("Item 1", "selected");
 
 makeHeader();
 
+
+include(dirname(__FILE__) . "/sidebar.php");
+
+// Additional side navigation items
+addSideNavigationItem("#", "Side Item 3");
+addSideNavigationItem("#", "Side Item 4");
+setSideNavigationItemClass("Side Item 1", "selected");
+
+makeSidebar();
+
 ?>
 
     <div id="main">
 			<p>Hallo world!</p>
     </div>
+		<div class="clearfix">&nbsp;</div>
 
 <?php
 

@@ -6,7 +6,7 @@ function makeFooter() {
 ?>	
 
     <footer>
-
+			&nbsp;
     </footer>
   </div> <!--! end of #container -->
 
