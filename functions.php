@@ -16,9 +16,18 @@ function enqueueScript($script, $isFooterScript = false) {
 
 $mainNavigationItems = array();
 
-function addMainNavigationItem($itemUrl, $itemTitle) {
+function addMainNavigationItem($itemUrl, $itemTitle, $itemClass = null) {
 	global $mainNavigationItems;
-	$mainNavigationItems[$itemTitle] = $itemUrl;
+	$mainNavigationItems[$itemTitle] = array();
+	$mainNavigationItems[$itemTitle]["url"] = $itemUrl;
+	$mainNavigationItems[$itemTitle]["class"] = $itemClass;
+}
+
+function setMainNavigationItemClass($itemTitle, $itemClass) {
+	global $mainNavigationItems;
+	if (isset($mainNavigationItems[$itemTitle])) {
+		$mainNavigationItems[$itemTitle]["class"] = $itemClass;
+	}
 }
 
 $title = "";

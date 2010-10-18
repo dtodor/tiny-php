@@ -2,6 +2,10 @@
 
 require_once(dirname(__FILE__) . "/functions.php");
 
+// Main navigation items
+addMainNavigationItem("#", "Item 1");
+addMainNavigationItem("#", "Item 2");
+
 function makeHeader() {
 	global $title;
 	global $enqueuedStylesheets;
@@ -54,8 +58,8 @@ function makeHeader() {
   <div id="container">
     <header>
 			<ul>
-				<?php foreach ($mainNavigationItems as $navItemTitle => $navItemUrl) : ?>
-				<li><a href="<?php echo $navItemUrl; ?>" title="<?php echo $navItemTitle; ?>"><?php echo $navItemTitle; ?></a></li>
+				<?php foreach ($mainNavigationItems as $navItemTitle => $navItemData) : ?>
+				<li class="<?php echo $navItemData['class']; ?>"><a href="<?php echo $navItemData['url']; ?>" title="<?php echo $navItemTitle; ?>"><?php echo $navItemTitle; ?></a></li>
 				<?php endforeach; ?>
 			</ul>
     </header>
